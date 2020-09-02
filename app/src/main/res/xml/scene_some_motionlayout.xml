@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        android:id="@+id/topToBottom"
+        motion:constraintSetEnd="@id/bottom"
+        motion:constraintSetStart="@id/top">
+        <OnClick
+            motion:clickAction="toggle"
+            motion:targetId="@+id/button" />
+    </Transition>
+
+    <ConstraintSet android:id="@id/top">
+        <Constraint android:id="@+id/text">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@+id/toolbar"
+                motion:layout_constraintVertical_bias="0" />
+        </Constraint>
+        <Constraint android:id="@+id/button">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/text" />
+            <CustomAttribute
+                motion:attributeName="text"
+                motion:customStringValue="Slide down" />
+        </Constraint>
+    </ConstraintSet>
+    <ConstraintSet android:id="@id/bottom">
+        <Constraint android:id="@+id/text">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@+id/toolbar"
+                motion:layout_constraintVertical_bias="1" />
+        </Constraint>
+        <Constraint android:id="@+id/button">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                motion:layout_constraintBottom_toTopOf="@id/text"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent" />
+            <CustomAttribute
+                motion:attributeName="text"
+                motion:customStringValue="Slide up" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>
