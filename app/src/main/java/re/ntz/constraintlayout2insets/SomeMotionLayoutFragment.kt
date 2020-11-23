@@ -23,7 +23,7 @@ class SomeMotionLayoutFragment : Fragment(R.layout.fragment_some_motionlayout) {
 
         view.setOnApplyWindowInsetsListener { _, insets ->
             toolbar.updatePadding(top = insets.systemWindowInsetTop)
-            // FIXME: Uncomment the line below to get it working in 2.0.1
+            // FIXME: Uncomment the line below to get it working in 2.0.4
             // view.requestLayout()
             insets
         }
